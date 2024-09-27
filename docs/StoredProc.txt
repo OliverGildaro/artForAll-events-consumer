@@ -1,0 +1,19 @@
+DEFINITION
+A stored procedure is a set of statements
+
+ADVANTAGES
+Changes easily applied
+Performance gain
+Enhanced security
+Reducing network traficc 
+Reusability
+
+TYPES
+System procedures (sys schema, part of the database engine)
+USer defined procedures
+
+INPUT vs OUTPUT parameters
+A SP can receive parameters
+The output parameter is returned to the caller SP
+Every SP return an integer value to the caller regardless is you set outpu parameters
+	if you did not set the value then default will be zero

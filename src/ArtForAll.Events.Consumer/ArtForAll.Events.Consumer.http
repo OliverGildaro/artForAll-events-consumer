@@ -1,0 +1,6 @@
+@ArtForAll.Events.Consumer_HostAddress = http://localhost:5006
+
+GET {{ArtForAll.Events.Consumer_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
