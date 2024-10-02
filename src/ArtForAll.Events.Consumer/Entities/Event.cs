@@ -11,9 +11,13 @@ namespace ArtForAll.Events.Infrastructure.DynamoRepositories.Entities
         public string Description { get; set; }
         public string Type { get; set; }
         public string State { get; set; }
-        public string Date { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
         [JsonPropertyName("sk")]
         public string CreatedAt { get; set; }
+        public int Capacity { get; set; }
         public Image Image { get; set; }
+        public Address Addres { get; set; }
+        public Price Price { get; set; }
     }
 }

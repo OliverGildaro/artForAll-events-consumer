@@ -22,7 +22,7 @@ namespace ArtForAll.Events.Infrastructure.DynamoRepositories.Mapper
                 Pk = item["pk"],
                 Name = item["name"],
                 Description = item["Description"],
-                Date = item["Date"],
+                StartDate = item["StartDate"],
                 State = item["state"],
                 Type = item["type"],
             };

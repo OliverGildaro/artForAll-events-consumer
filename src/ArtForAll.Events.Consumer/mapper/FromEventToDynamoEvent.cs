@@ -12,11 +12,26 @@
             {
                 Pk = @message.Id,
                 Name = @message.Name,
-                Date = @message.Date,
+                StartDate = @message.StartDate,
+                EndDate = message.EndDate,
                 CreatedAt = @message.CreatedAt,
                 State = @message.StateEvent,
                 Description = @message.Description,
-                Type = @message.Type
+                Type = @message.Type,
+                Addres = new Address
+                {
+                    City = message.Addres.City,
+                    Country = message.Addres.Country,
+                    Number = message.Addres.Number,
+                    Street = message.Addres.Street,
+                    ZipCode = message.Addres.ZipCode    
+                },
+                Capacity = message.Capacity,
+                Price = new Price
+                {
+                    CurrencyExchange = message.Price.CurrencyExchange,
+                    MonetaryValue = message.Price.MonetaryValue,
+                }
             };
         }
 
