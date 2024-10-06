@@ -1,4 +1,5 @@
 ﻿using ArtForAll.Events.Consumer.Entities;
+using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 
 namespace ArtForAll.Events.Infrastructure.DynamoRepositories.Entities
@@ -15,7 +16,8 @@ namespace ArtForAll.Events.Infrastructure.DynamoRepositories.Entities
         public string EndDate { get; set; }
         [JsonPropertyName("sk")]
         public string CreatedAt { get; set; }
-        public int Capacity { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public int? Capacity { get; set; }
         public Image Image { get; set; }
         public Address Addres { get; set; }
         public Price Price { get; set; }

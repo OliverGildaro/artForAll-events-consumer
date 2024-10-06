@@ -14,7 +14,7 @@
         public string Name { get; set; }
         public string StateEvent { get; set; }
         public string Type { get; set; }
-        public int Capacity { get; set; }
+        public int? Capacity { get; set; }
         public Address Addres { get; set; }
         public Price Price { get; set; }
 

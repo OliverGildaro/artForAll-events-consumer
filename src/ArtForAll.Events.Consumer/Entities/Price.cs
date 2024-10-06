@@ -1,8 +1,12 @@
-﻿namespace ArtForAll.Events.Consumer.Entities
+﻿using Newtonsoft.Json;
+
+namespace ArtForAll.Events.Consumer.Entities
 {
     public class Price
     {
-        public string CurrencyExchange { get; set; }
-        public float MonetaryValue { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public string? CurrencyExchange { get; set; }
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        public float? MonetaryValue { get; set; }
     }
 }
