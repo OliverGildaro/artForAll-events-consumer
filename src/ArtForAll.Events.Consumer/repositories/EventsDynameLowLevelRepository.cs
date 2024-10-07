@@ -174,6 +174,37 @@
             }
         }
 
+        public async Task<Result<Event, Error>> FindAsync(string state, string name)
+        {
+            var queryRequest = new GetItemRequest
+            {
+                TableName = _tableName,
+                Key = new Dictionary<string, AttributeValue>
+                {
+                    { "pk", new AttributeValue { S = state } },
+                    { "sk", new AttributeValue { S = name } }
+
+                }
+            };
+
+            var response = await client.GetItemAsync(queryRequest);
+
+            if (response.Item.Count == 0)
+            {
+                return Result<Event, Error>.Failure(new Error("", ""));
+            }
+
+            var itemAsDocument = Document.FromAttributeMap(response.Item);
+            var simpleDynamoEvent = JsonSerializer.Deserialize<Event>(itemAsDocument.ToJson());
+
+            if (simpleDynamoEvent is null)
+            {
+                return Result<Event, Error>.Failure(new Error("", ""));
+            }
+
+            return Result<Event, Error>.Success(simpleDynamoEvent);
+        }
+
         public async Task<Result<Event, Error>> AddImageAsync(string eventId, string createdAt, Image image)
         {
             // Fetch the existing event from DynamoDB

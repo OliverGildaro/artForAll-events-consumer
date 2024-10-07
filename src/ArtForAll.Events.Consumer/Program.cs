@@ -21,6 +21,7 @@ builder.Services.AddSingleton<CommandDispatcher>();
 builder.Services.AddTransient<ICommandHandler<EventCreated, Result>, EventCreatedHandler>();
 builder.Services.AddTransient<ICommandHandler<EventPatched, Result>, EventPatchedHandler>();
 builder.Services.AddTransient<ICommandHandler<ImageAdded, Result>, ImageAddedHandler>();
+builder.Services.AddTransient<ICommandHandler<EventNameUpdated, Result>, EventNameUpdatedHandler>();
 builder.Services.AddTransient<ICommandHandler<EventPublished, Result>, EventPublishedHandler>();
 builder.Services.AddTransient<ICommandHandler<EventDeleted, Result>, EventDeletedHandler>();
 builder.Services.AddTransient<IEventsRepository, EventsDynameLowLevelRepository>();

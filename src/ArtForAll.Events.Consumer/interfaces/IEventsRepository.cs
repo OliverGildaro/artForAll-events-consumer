@@ -11,6 +11,7 @@
         Task<Result> UpdateState(string pk, string createdAt, string newState);
         Task<Result> PatchEvent(EventPatch @event);
         Task<Result> DeleteASync(string state, string name);
+        Task<Result<Event, Error>> FindAsync(string state, string name);
         Task<Result<Event, Error>> AddImageAsync(string eventId, string createdAt, Image image);
     }
 }
