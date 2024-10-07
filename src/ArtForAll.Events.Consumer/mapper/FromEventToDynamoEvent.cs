@@ -10,7 +10,7 @@
         {
             return new Event
             {
-                Pk = @message.Id,
+                Id = @message.Id,
                 Name = @message.Name,
                 StartDate = @message.StartDate,
                 EndDate = message.EndDate,
@@ -40,8 +40,28 @@
         {
             return new Event
             {
-                Pk = @message.Id,
-                State = @message.StateEvent
+                Id = @message.Id,   
+                Name = @message.Name,
+                StartDate = @message.StartDate,
+                EndDate = message.EndDate,
+                CreatedAt = @message.CreatedAt,
+                State = @message.StateEvent,
+                Description = @message.Description,
+                Type = @message.Type,
+                Addres = new Address
+                {
+                    City = message.Addres.City,
+                    Country = message.Addres.Country,
+                    Number = message.Addres.Number,
+                    Street = message.Addres.Street,
+                    ZipCode = message.Addres.ZipCode
+                },
+                Capacity = message.Capacity,
+                Price = new Price
+                {
+                    CurrencyExchange = message.Price.CurrencyExchange,
+                    MonetaryValue = message.Price.MonetaryValue,
+                }
             };
         }
 
@@ -54,8 +74,8 @@
             }
             return new EventPatch
             {
-                Pk = @message.Id,
-                CreatedAt = @message.CreatedAt,
+                State = @message.State,
+                Name = @message.Name,
                 PatchOperations = patchOperations,
             };
         }

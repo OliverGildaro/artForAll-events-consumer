@@ -19,7 +19,7 @@ namespace ArtForAll.Events.Infrastructure.DynamoRepositories.Mapper
         {
             return new Event
             {
-                Pk = item["pk"],
+                Id = item["Id"],
                 Name = item["name"],
                 Description = item["Description"],
                 StartDate = item["StartDate"],

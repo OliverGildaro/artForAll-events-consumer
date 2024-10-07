@@ -5,8 +5,8 @@ namespace ArtForAll.Events.Consumer.Messages
 {
     public class EventPatched : ICommand
     {
-        public string Id { get; set; }
-        public string CreatedAt { get; set; }
+        public string State { get; set; }
+        public string Name { get; set; }
         public IEnumerable<EventPatchOperation> PatchOperations { get; set; } = new List<EventPatchOperation>();
     }
 }

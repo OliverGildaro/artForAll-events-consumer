@@ -124,8 +124,8 @@
                 TableName = _tableName,
                 Key = new Dictionary<string, AttributeValue>
                 {
-                    { "pk", new AttributeValue { S = @event.Pk } },
-                    { "sk", new AttributeValue { S = @event.CreatedAt.ToString() } }
+                    { "pk", new AttributeValue { S = @event.State } },
+                    { "sk", new AttributeValue { S = @event.Name } }
                 },
                 AttributeUpdates = atrributeUpdates,
             };
@@ -147,15 +147,15 @@
             }
         }
 
-        public async Task<Result> DeleteASync(string pk, string createdAt)
+        public async Task<Result> DeleteASync(string state, string name)
         {
             var deletedItemRequest = new DeleteItemRequest
             {
                 TableName = _tableName,
                 Key = new Dictionary<string, AttributeValue>
                 {
-                    { "pk", new AttributeValue { S = pk } },
-                    { "sk", new AttributeValue { S = createdAt.ToString() } }
+                    { "pk", new AttributeValue { S = state } },
+                    { "sk", new AttributeValue { S = name } }
                 },
             };
 

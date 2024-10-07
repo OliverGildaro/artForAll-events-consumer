@@ -6,9 +6,9 @@ namespace ArtForAll.Events.Consumer.Entities
     public class EventPatch
     {
         [JsonPropertyName("pk")]
-        public string Pk { get; set; }
+        public string State { get; set; }
         [JsonPropertyName("sk")]
-        public string CreatedAt { get; set; }
+        public string Name { get; set; }
         public IEnumerable<EventPatchOperation> PatchOperations { get; set; } = new List<EventPatchOperation>();
     }
 }

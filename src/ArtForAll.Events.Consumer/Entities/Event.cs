@@ -6,15 +6,15 @@ namespace ArtForAll.Events.Infrastructure.DynamoRepositories.Entities
 {
     public class Event
     {
-        [JsonPropertyName("pk")]
-        public string Pk { get; set; }
+        public string Id { get; set; }
+        [JsonPropertyName("sk")]
         public string Name { get; set; }
         public string Description { get; set; }
         public string Type { get; set; }
+        [JsonPropertyName("pk")]
         public string State { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
-        [JsonPropertyName("sk")]
         public string CreatedAt { get; set; }
         [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
         public int? Capacity { get; set; }
