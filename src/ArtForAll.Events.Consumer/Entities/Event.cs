@@ -20,6 +20,6 @@ namespace ArtForAll.Events.Infrastructure.DynamoRepositories.Entities
         public int? Capacity { get; set; }
         public Image Image { get; set; }
         public Address Addres { get; set; }
-        public Price Price { get; set; }
+        public Price? Price { get; set; }
     }
 }

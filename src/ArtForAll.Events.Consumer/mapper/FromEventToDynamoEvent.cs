@@ -27,11 +27,11 @@
                     ZipCode = message.Addres.ZipCode    
                 },
                 Capacity = message.Capacity,
-                Price = new Price
+                Price = message.Price != null ? new Price
                 {
                     CurrencyExchange = message.Price.CurrencyExchange,
                     MonetaryValue = message.Price.MonetaryValue,
-                }
+                } : null
             };
         }
 
